@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Inquiry;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class InquiryController extends Controller
 {
@@ -40,7 +41,21 @@ class InquiryController extends Controller
         return $this->sendSuccessResponse($inquiry, 'Inquiry Added');
     }
 
-    public function updateStatus(Request $request)
+    public function update(Request $request, $id)
     {
+        $validation = Validator::make($request->all(), [
+            'status' => ['required', Rule::in(['assigned', 'resolved'])],
+        ]);
+        if ($validation->fails()) {
+            return $this->sendErrorResponse($validation->errors());
+        }
+        $inquiry = Inquiry::findOrFail($id);
+        if ($inquiry) {
+            $inquiry->update([
+                'status' => $request->status
+            ]);
+            return $this->sendSuccessResponse($inquiry->toArray(), 'Updated');
+        }
+        return $this->sendSuccessResponse([], 'Item Not found');
     }
 }

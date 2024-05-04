@@ -9,27 +9,48 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let inquiry of inquiries">
-        <td>
-          <p class="fw-bold mb-1">{{ inquiry.name }}</p>
-        </td>
-        <td>
-          {{ inquiry.email }}
-        </td>
-        <td class="text-capitalize">
-          <span
-            [ngClass]="{
-              'btn btn-warning': inquiry.status == 'new',
-              'btn btn-info': inquiry.status == 'assneigned',
-              'btn btn-success': inquiry.status == 'resolved',
-              ' btn ': true,
-
-            }"
-            >{{ inquiry.status }}</span
-          >
-        </td>
-        <td>{{ inquiry.created_at | date : "EEE, MMM d, y" }}</td>
-      </tr>
+      <ng-container *ngFor="let inquiry of inquiries">
+        <tr (click)="toggleMessage(inquiry)">
+          <td>
+            <p class="fw-bold mb-1">{{ inquiry.name }}</p>
+          </td>
+          <td>
+            {{ inquiry.email }}
+          </td>
+          <td class="text-capitalize">
+            <span
+              [ngClass]="{
+                'btn btn-warning': inquiry.status == 'new',
+                'btn btn-info': inquiry.status == 'assigned',
+                'btn btn-success': inquiry.status == 'resolved',
+                'btn': true,
+              }"
+            >
+              {{ inquiry.status }}
+            </span>
+          </td>
+          <td>{{ inquiry.created_at | date : "EEE, MMM d, y" }}</td>
+        </tr>
+        <tr *ngIf="inquiry.expanded">
+          <td>Message from: {{ inquiry.name }}</td>
+          <td colspan="3" class="table-primary">{{ inquiry.message }}</td>
+        </tr>
+        <tr *ngIf="inquiry.expanded">
+          <td colspan="2">Mark As:</td>
+          <td colspan="2" class="justify-content-center">
+            <span
+              class="btn btn-info m-2"
+              (click)="updateStatus(inquiry, 'assigned')"
+              >Assigned</span
+            >
+            <span
+              class="btn btn-success"
+              (click)="updateStatus(inquiry, 'resolved')"
+              >Resolved</span
+            >
+          </td>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
 </div>

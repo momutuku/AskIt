@@ -7,4 +7,5 @@ export interface Inquiry {
   status: string | null;
   created_at: string | null;
   updated_at: string | null;
+  expanded?: boolean;
 }
