@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) {}
+  errorMessages: any[] = [];
 
   token = localStorage.getItem('user_token');
 
@@ -38,6 +39,14 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('user_token', response.data.token);
             localStorage.setItem('token_expiry', response.data.token_expiry);
             this.router.navigate(['/inquiries']);
+          } else {
+            const messageObj = response.message;
+            this.errorMessages = [];
+            for (const key in messageObj) {
+              if (messageObj.hasOwnProperty(key)) {
+                this.errorMessages.push(`${messageObj[key][0]}`);
+              }
+            }
           }
         },
 
