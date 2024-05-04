@@ -1,0 +1,713 @@
+{
+	"info": {
+		"_postman_id": "cb0ce05f-cbf6-4e61-bdd7-77a45aec8994",
+		"name": "Inquiry Submission System",
+		"description": "Postman collection of all the requests implemented in this project.\n\nFull Documentation found [here](https://interstellar-flare-856825.postman.co/workspace/38d994db-b21b-4611-a20c-4691f1075dc5/documentation/19904898-cb0ce05f-cbf6-4e61-bdd7-77a45aec8994)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19904898"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonObject = xml2Json(responseBody);\r",
+							"var tk = JSON.parse(responseBody);\r",
+							"var bearerToken = tk[\"data\"][\"token\"];\r",
+							"pm.environment.set(\"AccessToken\",bearerToken);\r",
+							"\r",
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"mike3@gmail.com\",\r\n    \"password\":\"Passsssssssss\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "This endpoint is used to login and obtain an access tokento be used to make subsequest requests"
+			},
+			"response": [
+				{
+					"name": "Successfull Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mike3@gmail.com\",\r\n    \"password\":\"Passsssssssss\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 May 2024 17:14:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiNDhlYzBlZDJmYzA3Y2MwMmJlNDdlMGM0MDBjYjhiZDkzNTg3ZjVjOTk2Y2FmZmVjN2NmZmM0OWRkY2ZhNGYxYTcwOTUwYTRmN2RhNzU0NmUiLCJpYXQiOjE3MTQ4NDI4NzEuNDI0MTI1LCJuYmYiOjE3MTQ4NDI4NzEuNDI0MTMzLCJleHAiOjE3MTQ4NjQ0NzEuNDA1MDE1LCJzdWIiOiI1Iiwic2NvcGVzIjpbXX0.TbhPrvdVZMF_WtMa3vqE5luIfMRu07t0pbQ__pYnM7GYVl2Fap4UAvTKgBPP59_p8_R5mTYhuXio2mLgA_NqY5vWgcUB9nr77qZS5B3faDczfI6fw8zZ3hTSVznCW7WoFgqH5UYn1FCwQcw55u4Ut3_sDvtbanP2snBBf324YDohFyN3c4yGWDCQa9w1sQn_mb7zphi76-UvTapsA8U2oPsfpr_hiTxeCsMZTdhw2sI8G1pHvaRBCN5Vlj2sLJ1HicRWiOISbjtSfJ2fSbfqJHDvUNkxdHBPmBBfn7NzYa-iVwRn1_6LztcIxagAyVvy0m08kumyfmJHgCiBZt9UjLTdSNSLYl5gYBK5cMrz7yeBA6iVKITIH7QeKuZ9Ld2GUQUtYY2XZXWYDgyO8ClGsA44Lr56tw_sXW6-cNKGtHpwBI8obBSUorT3dXnfUWbVt-IQ4nMchsT8wHQFZfGNoSqB7AC8Od6impGwfCPu0yHOODC_HISXFJF-ccRbXWof5K9qETvIMhpCNlazb1Z42v-MN_WapyoJufgvQI4sXjTlHD9I8y0zEyuErGlGMrN42gkPziDnZvsKUCKrS39nlPtNqSFAR6BAjxxzFsDFyHISIbqxcckQQL6M6Z8MtegKlW6UiehUSJ1c2kA6OY4hmy7Bc_xJVijx3dHvMqr0ePg\",\n        \"name\": \"Jacob Strosin\"\n    },\n    \"message\": \"Success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonObject = xml2Json(responseBody);\r",
+							"var tk = JSON.parse(responseBody);\r",
+							"var bearerToken = tk[\"data\"][\"token\"];\r",
+							"pm.environment.set(\"AccessToken\",bearerToken);\r",
+							"\r",
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"name\":\"{{$randomFullName}}\",\r\n    \"password\":\"Passsssssssss\",\r\n    \"password_confirmation\":\"Passsssssssss\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "This endpoint is used to create a new user and obtain an access tokento be used to make subsequest requests"
+			},
+			"response": [
+				{
+					"name": "Successfull Registration Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Jenifer_Koepp99@hotmail.com\",\r\n    \"name\":\"Oliver Dickinson\",\r\n    \"password\":\"Passsssssssss\",\r\n    \"password_confirmation\":\"Passsssssssss\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 May 2024 17:04:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmQwY2MyZjMyZjE4MzM0MGM3YWExOWI5YWIzNDA1ZDYxYTdhNzFhNWQ1NWQxYjRlNjk1NWVmMDIyMDZmOWI3NGNiNjUyZDQ1MzE2MmNjMGMiLCJpYXQiOjE3MTQ4NDIyNzEuMDgzMjM5LCJuYmYiOjE3MTQ4NDIyNzEuMDgzMjU5LCJleHAiOjE3MTQ4NjM4NzEuMDU5MzEzLCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.D7eD_0CsvPtNDAMiPkLymio38AWO9q7iK4bMOI5Eoa-fcKnGUe15SOGwjvYlAOJRe-weXiFwk03kMyXidx6hRtN-1W4j8N88DM7ebVZ2o2N0lIlcPrbt1u_CVJaMp-he9DjEo6iMFeM7LOF5G3af1SMAb6ULzHcD6REC_W_xqQwlknMsYgjGTN9OZU8HqOwWZ2zTUPeWx8vrPDGJDrCjSYfzKR_EZxt1KvONdAMZw_8UPnMsCa5ptf15En75UMIwmRJhpI9EZs1bXncbMPE6Qg8iA4LJVAEHfd6L0J_Q_jlK6Slvvou0E1ta0a3BJNvwUQ2v1ac-d1FLJOKkICRL3dW3xvv06RlQeEQVzl2qnLibQtiNcRut6Sp8MK0GCIrio9bE4lL4nIuvKD5FKOQ9D7ZPx1WL680J9cpX9owdVYSyr5m7gMAYE42qK724_DjFKmxSWjBAflDJM_bJ6CSBnsZXteg2-m0-tD8XmyuTeqcLsNCdQhn9hZXGl2hNCDZGWQQ4qsHJzuZQjtBoQdJiiqBaTDdsGARR0vYhosFCrXYe3G5oO9cfXQz6OdnD7GFxqw3Lf5NOjPmPmdnACLz-k8u7-884RGw4p_D2JGtpHJx_6evs2iCjg58TMFTsCO8cA1lZAm6fzjDqZ2OrhBRvELGkJDLj8EwEaqfnQ0BQ2go\",\n        \"name\": \"Wm Hammes\"\n    },\n    \"message\": \"User Created\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Make Inquiry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AccessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"name\":\"{{$randomFullName}}\",\r\n    \"phone\":\"{{$randomPhoneNumber}}\",\r\n    \"message\":\"{{$randomLoremParagraph}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/inquries/add",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"inquries",
+						"add"
+					]
+				},
+				"description": "This endpoint is used to add an inquiry/question to customer support."
+			},
+			"response": [
+				{
+					"name": "Make Inquiry",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Shad_Moore65@hotmail.com\",\r\n    \"name\":\"Christie Hammes\",\r\n    \"phone\":\"977-617-9312\",\r\n    \"message\":\"Ut velit dolor id impedit in veritatis et dignissimos id. Perferendis qui reiciendis dolores aut quod maiores quam eum cum. Nemo quos ad autem ut totam.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/inquries/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"inquries",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 May 2024 17:16:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"email\": \"Tyreek_Heathcote21@yahoo.com\",\n        \"name\": \"Jenna Rowe\",\n        \"phone\": \"468-349-3594\",\n        \"message\": \"Quo dolorem vel suscipit. Pariatur ad est at alias. Deserunt inventore tempore cumque.\",\n        \"updated_at\": \"2024-05-04T17:16:29.000000Z\",\n        \"created_at\": \"2024-05-04T17:16:29.000000Z\",\n        \"id\": 23\n    },\n    \"message\": \"Inquiry Added\"\n}"
+				}
+			]
+		},
+		{
+			"name": "All Inquiries",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiNjI2MDU3OTlkMDcwNzI5MTZlZmRkYzZmMWQ1YTIxNjU4YjZjZWJjZTI1ODM1YTA5ODY3ZmJiMDFjMTdiM2FiMTUwMmRlODNkMWMzMGRmZWQiLCJpYXQiOjE3MTQ4MjQxODguMzU0NDc2LCJuYmYiOjE3MTQ4MjQxODguMzU0NDg0LCJleHAiOjE3NDYzNjAxODguMzE5NDMzLCJzdWIiOiI1Iiwic2NvcGVzIjpbXX0.FFSnbBNMQC3MI_eRYtdTSwg60jJP9Zdg7wPbtQMIZoIqIzoCD57hoZuK2Ot4AOZjOkyGkfU4W3-cTJhecn6VqJEdqN2ebzJQ32rxHs27mmbS9-TGhwfTFaxNm9oLdXgsNAO5mVq4jHpoKnmZ-4wTpKIOlzL-p7EMQdsDhdEnyRs4D8OBezOv6BP4P2C4KrHeroIihlUBzBElGWAnKhfkNtLFCIH-lUHtBzn0jr8S9g5Jh6FBFHONy76w4t8RsKORBORfED-Sy499dhw9n79gEn67AygI93PtWq-x0SVbBh8Jebw4J2WbuiZpsLMdyB7GIi56b6PjyX3ooELkdGTqf79QU4WrLS1h5MKDDhLBi3vALCZ4JAL1lZXCBbAtCtSvNlbSYgSnu_bcdNigJNAQqAw7Hf8TJnpYKhvogFt3bhUaUnEF7wl0AeBznLGYW0OGVgTgOIY7ICHNsmim-qG9rNWNGFK3giXKp6jsKH8PAnOQJwEu88uB1JXr23tFfRdjwftxP8tFeFyKyjoFfbF26GZDcwr7fN4gkjR-Sw_b1oteuEUHAYW903YgD_M26_RiQKlhq50Mmb0jr1B917w3KeB-QDKUhvYND2-CNXnjNy3RyX_fOEqECwWI28P-1r2zbxT5ghTpo0j43h9y3AZBx-Lac3LW0yuX_zxrepiZf_E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/inquries",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"inquries"
+					]
+				},
+				"description": "This endpoint is used to retrieve all the inquries sent in."
+			},
+			"response": [
+				{
+					"name": "All Inquiries",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/inquries",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"inquries"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 May 2024 17:16:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Nelson Barrows\",\n            \"email\": \"Ricardo_Bergnaum39@gmail.com\",\n            \"phone\": null,\n            \"message\": \"Vero eius eius sit eum sit aut. Libero nihil officia quia eum totam velit asperiores. Qui voluptatem assumenda in velit et error dolorem. Quae maxime sunt omnis quo quaerat. Harum eum nemo nihil.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T11:54:03.000000Z\",\n            \"updated_at\": \"2024-05-04T11:54:03.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Cornelius Bernier IV\",\n            \"email\": \"Aleen56@gmail.com\",\n            \"phone\": null,\n            \"message\": \"Deleniti quo nesciunt libero. Vel quia consectetur est est amet. At dolorem quis porro quisquam aliquid id iusto.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T11:55:05.000000Z\",\n            \"updated_at\": \"2024-05-04T11:55:05.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Bruce Feil\",\n            \"email\": \"Dino9@hotmail.com\",\n            \"phone\": \"628-677-0598\",\n            \"message\": \"Repellendus debitis at corrupti dolorum. Deserunt veritatis a id rerum architecto. Eius autem aut quo. Molestiae quia quaerat est aliquid et. Inventore ab vitae quia est sit. Eligendi consequuntur quam temporibus repellendus esse enim beatae possimus.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T11:55:17.000000Z\",\n            \"updated_at\": \"2024-05-04T11:55:17.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Cesar Prosacco\",\n            \"email\": \"Milo39@gmail.com\",\n            \"phone\": \"773-591-0082\",\n            \"message\": \"Nihil quam libero omnis hic cupiditate voluptatibus. Similique doloremque consequatur tempora deleniti. Et et animi aut. Qui temporibus inventore. Ut dolore inventore accusamus laboriosam in et odio vel nisi. Quos consequatur aperiam consectetur repellat iure autem corrupti voluptatem.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T11:59:16.000000Z\",\n            \"updated_at\": \"2024-05-04T11:59:16.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Jack Gutmann Sr.\",\n            \"email\": \"Fern22@gmail.com\",\n            \"phone\": \"707-544-3873\",\n            \"message\": \"Voluptas debitis repudiandae dolores reiciendis earum eligendi sit quisquam. Molestiae perferendis et sed sint quis eum id. Nesciunt voluptatibus aut cumque sunt ipsam eum aspernatur repellendus.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T12:13:07.000000Z\",\n            \"updated_at\": \"2024-05-04T12:13:07.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Darryl Kassulke\",\n            \"email\": \"Brennan.Schamberger@gmail.com\",\n            \"phone\": \"922-373-5298\",\n            \"message\": \"Amet corrupti dolores incidunt ea omnis atque ea. Velit magnam ut ab aperiam iure. Quo est sit. Sit ipsam minus fugiat deleniti ea possimus.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:18.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:18.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Rex Blanda Sr.\",\n            \"email\": \"Sheila_Nolan@hotmail.com\",\n            \"phone\": \"982-877-5264\",\n            \"message\": \"In maxime pariatur sit eligendi consequatur. Tempore in excepturi eos magnam nostrum hic. Dolorem asperiores fuga ut et aperiam eligendi cupiditate et qui. Porro ad vero est et est beatae cum. Nihil maxime velit ea. Optio sunt perspiciatis.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:20.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:20.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Tommie Walter\",\n            \"email\": \"Jaquelin.DuBuque@gmail.com\",\n            \"phone\": \"947-730-7886\",\n            \"message\": \"Omnis modi nam ut fugiat. Vel est dolorem laborum magni dignissimos expedita recusandae labore at. Asperiores ab odio consequatur et ut ut saepe voluptatem maiores.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:21.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:21.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Yvette Rau\",\n            \"email\": \"Phoebe.Gusikowski15@yahoo.com\",\n            \"phone\": \"723-821-6205\",\n            \"message\": \"Ut provident porro. Quia quo sint ad. Quo placeat cupiditate vitae nihil ut nobis reiciendis voluptas. Perspiciatis asperiores voluptatem eum nihil architecto tempore excepturi. Rerum maxime quas quaerat ea. Tenetur velit minus occaecati sunt.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:22.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:22.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Dr. Linda Hahn\",\n            \"email\": \"Mac80@hotmail.com\",\n            \"phone\": \"932-931-8406\",\n            \"message\": \"Explicabo minus dolor id sed molestias id. Aut quod atque. Minus pariatur iure quae excepturi voluptatem cum cumque. Sit ipsam provident ut. Eligendi recusandae similique odio sunt.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:23.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:23.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Terrell Hills\",\n            \"email\": \"Haylee84@gmail.com\",\n            \"phone\": \"266-657-6190\",\n            \"message\": \"Cupiditate eius quae voluptas libero repellat vero aperiam. Ut amet tempora placeat. Recusandae ad et. Et quia sunt distinctio provident quod aut accusamus dolore provident.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:24.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:24.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Maryann Hartmann\",\n            \"email\": \"Magdalena78@yahoo.com\",\n            \"phone\": \"499-523-8574\",\n            \"message\": \"Voluptate qui inventore. Vel aut excepturi ea dolorum sed excepturi praesentium fuga neque. Ratione id dicta dolor odit. Dolorem aut porro. Est doloribus dolor sed consectetur corrupti. Facere tempora ut.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:25.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:25.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Joey Langosh\",\n            \"email\": \"Pascale.Lang@yahoo.com\",\n            \"phone\": \"475-992-3540\",\n            \"message\": \"Impedit omnis eligendi hic harum qui inventore ducimus et. Voluptate ad ea ipsam quaerat impedit dignissimos. Enim earum corporis. Temporibus omnis saepe cumque amet fugiat ut fugit. Quibusdam eligendi vero sed quis dolorem.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:26.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:26.000000Z\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Yvette Brown\",\n            \"email\": \"Orie.Cronin@hotmail.com\",\n            \"phone\": \"713-665-6657\",\n            \"message\": \"Magnam expedita consequatur voluptatibus ducimus. Eum ab illo cumque. Aut nihil iusto non asperiores enim aut quo. Architecto libero non enim perspiciatis. Incidunt blanditiis eos possimus delectus in consequatur eos ut incidunt. Maiores consequuntur ab sit cumque cum suscipit et.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:27.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:27.000000Z\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Jerald Ortiz\",\n            \"email\": \"Catalina_Marvin@gmail.com\",\n            \"phone\": \"606-552-4678\",\n            \"message\": \"Cupiditate ex optio. Saepe quis quia error. Occaecati eum unde architecto iste sunt dolores ab quam. Illum iste repudiandae doloribus qui mollitia sunt deserunt. Ut laboriosam rerum sed.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:28.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:28.000000Z\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Nancy Koelpin\",\n            \"email\": \"Jared_Toy35@yahoo.com\",\n            \"phone\": \"563-481-5686\",\n            \"message\": \"Excepturi et nobis recusandae eum est voluptatem quis cupiditate vero. Veniam aut et quia vel eius voluptate. Veniam exercitationem sit quia architecto molestiae. Aliquid enim et. Enim voluptatem odio voluptates voluptatem quam. Ab ullam voluptatem expedita id debitis dolorum non.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:28.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:28.000000Z\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Sandra Dietrich\",\n            \"email\": \"Nigel.Hirthe88@gmail.com\",\n            \"phone\": \"871-474-5479\",\n            \"message\": \"Soluta sint est accusamus ut sunt cumque reprehenderit autem temporibus. Quam incidunt laudantium rem ducimus. Dicta est dicta nobis omnis reprehenderit consequatur quidem. Labore aperiam sit voluptatem iure aliquid odio expedita. Nesciunt placeat odio eos impedit tenetur ea facere officiis. Corporis quisquam laboriosam quis cupiditate.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:29.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:29.000000Z\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"Lindsey Kilback\",\n            \"email\": \"Billy_Schaefer@yahoo.com\",\n            \"phone\": \"388-255-4718\",\n            \"message\": \"Corrupti ut reiciendis. Et ratione maiores ut laudantium vel sunt doloremque. Totam dolor atque magnam deleniti quia architecto. Optio quia voluptas minima quidem dolor eos quo. Rerum consequuntur sint est qui voluptas similique explicabo veniam cupiditate.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T14:22:30.000000Z\",\n            \"updated_at\": \"2024-05-04T14:22:30.000000Z\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"Gerald Kling\",\n            \"email\": \"Myrtle.OReilly95@gmail.com\",\n            \"phone\": \"824-253-2771\",\n            \"message\": \"Culpa est nihil accusamus odit reprehenderit. Vero quam quaerat excepturi ratione provident dolores voluptas. Ullam sint necessitatibus unde odio. Tempore pariatur incidunt temporibus. Velit vero consequatur. Quidem est qui incidunt dolor sed sequi a facilis cumque.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T15:25:38.000000Z\",\n            \"updated_at\": \"2024-05-04T15:25:38.000000Z\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Mike Smith\",\n            \"email\": \"mmm@gmail.com\",\n            \"phone\": null,\n            \"message\": \"Here\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T15:42:04.000000Z\",\n            \"updated_at\": \"2024-05-04T15:42:04.000000Z\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"Malcom X\",\n            \"email\": \"malcom@gmal.com\",\n            \"phone\": \"254721378923\",\n            \"message\": \"Hwre\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T15:43:14.000000Z\",\n            \"updated_at\": \"2024-05-04T15:43:14.000000Z\"\n        },\n        {\n            \"id\": 22,\n            \"name\": \"Mike\",\n            \"email\": \"mike@gmail.com\",\n            \"phone\": null,\n            \"message\": \"Message\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T15:44:23.000000Z\",\n            \"updated_at\": \"2024-05-04T15:44:23.000000Z\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"Jenna Rowe\",\n            \"email\": \"Tyreek_Heathcote21@yahoo.com\",\n            \"phone\": \"468-349-3594\",\n            \"message\": \"Quo dolorem vel suscipit. Pariatur ad est at alias. Deserunt inventore tempore cumque.\",\n            \"status\": \"new\",\n            \"created_at\": \"2024-05-04T17:16:29.000000Z\",\n            \"updated_at\": \"2024-05-04T17:16:29.000000Z\"\n        }\n    ],\n    \"message\": \"Success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Inquiries By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AccessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/inquries/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"inquries",
+						"3"
+					]
+				},
+				"description": "This endpoint is used to retrieve a specific inquery"
+			},
+			"response": [
+				{
+					"name": "Inquiries By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/inquries/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"inquries",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 May 2024 17:17:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Bruce Feil\",\n        \"email\": \"Dino9@hotmail.com\",\n        \"phone\": \"628-677-0598\",\n        \"message\": \"Repellendus debitis at corrupti dolorum. Deserunt veritatis a id rerum architecto. Eius autem aut quo. Molestiae quia quaerat est aliquid et. Inventore ab vitae quia est sit. Eligendi consequuntur quam temporibus repellendus esse enim beatae possimus.\",\n        \"status\": \"new\",\n        \"created_at\": \"2024-05-04T11:55:17.000000Z\",\n        \"updated_at\": \"2024-05-04T11:55:17.000000Z\"\n    },\n    \"message\": \"Success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Mark Inquiry as resolved",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://127.0.0.1/api/inquiry/1",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"inquiry",
+						"1"
+					]
+				},
+				"description": "This endpoint is used to change the status of an inquery"
+			},
+			"response": [
+				{
+					"name": "Update Inquiry Status",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"status\":\"assigned\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/inquiries/update/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"inquiries",
+								"update",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 May 2024 20:15:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "56"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Cornelius Bernier IV\",\n        \"email\": \"Aleen56@gmail.com\",\n        \"phone\": null,\n        \"message\": \"Deleniti quo nesciunt libero. Vel quia consectetur est est amet. At dolorem quis porro quisquam aliquid id iusto.\",\n        \"status\": \"assigned\",\n        \"created_at\": \"2024-05-04T11:55:05.000000Z\",\n        \"updated_at\": \"2024-05-04T20:15:34.000000Z\"\n    },\n    \"message\": \"Updated\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "AccessToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
