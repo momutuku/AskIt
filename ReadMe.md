@@ -42,7 +42,7 @@ This is form is used to submit an inquiry
 ![Inquiry Submission Form](frontend/screenshots/submision.png)
 
 ##### All Inquiries view
-This is a table that shows all the inquiries submitted to the system. To access this endpoint requires a user to be authenticated. 
+This is a table that shows all the inquiries submitted to the system. To access this endpoint requires a user to be authenticated with a bearer token this is obtained after a login/registration. 
 
   On the web frontend this is accessible through http://localhost:4200/inquiries. On submission it sends a POST request to http://127.0.0.1:8000/api/inquries
 
@@ -51,7 +51,7 @@ This is a table that shows all the inquiries submitted to the system. To access 
 ##### Single Inquiry View
 This is a view appears when you click on a single inquiry row. If the "Asssigned" or "Resolved" buttons in the "Mark As" sesction are clicked, they send a put request to http://127.0.0.1:8000/api/inquiries/update/{id} which changes the status of the inquiry. 
 
-To access this endpoint requires a user to be authenticated. 
+To access this endpoint requires a user to be authenticated with a bearer token this is obtained after a login/registration.  
 
 | Status    | Meaning     | 
 | ------------ | ------------ | 
