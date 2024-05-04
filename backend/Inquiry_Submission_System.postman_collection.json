@@ -57,7 +57,7 @@
 			},
 			"response": [
 				{
-					"name": "Successfull Login",
+					"name": "Login",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
@@ -108,7 +108,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Sat, 04 May 2024 17:14:31 GMT"
+							"value": "Sat, 04 May 2024 21:26:48 GMT"
 						},
 						{
 							"key": "Content-Type",
@@ -120,7 +120,7 @@
 						},
 						{
 							"key": "X-RateLimit-Remaining",
-							"value": "57"
+							"value": "59"
 						},
 						{
 							"key": "Access-Control-Allow-Origin",
@@ -128,7 +128,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiNDhlYzBlZDJmYzA3Y2MwMmJlNDdlMGM0MDBjYjhiZDkzNTg3ZjVjOTk2Y2FmZmVjN2NmZmM0OWRkY2ZhNGYxYTcwOTUwYTRmN2RhNzU0NmUiLCJpYXQiOjE3MTQ4NDI4NzEuNDI0MTI1LCJuYmYiOjE3MTQ4NDI4NzEuNDI0MTMzLCJleHAiOjE3MTQ4NjQ0NzEuNDA1MDE1LCJzdWIiOiI1Iiwic2NvcGVzIjpbXX0.TbhPrvdVZMF_WtMa3vqE5luIfMRu07t0pbQ__pYnM7GYVl2Fap4UAvTKgBPP59_p8_R5mTYhuXio2mLgA_NqY5vWgcUB9nr77qZS5B3faDczfI6fw8zZ3hTSVznCW7WoFgqH5UYn1FCwQcw55u4Ut3_sDvtbanP2snBBf324YDohFyN3c4yGWDCQa9w1sQn_mb7zphi76-UvTapsA8U2oPsfpr_hiTxeCsMZTdhw2sI8G1pHvaRBCN5Vlj2sLJ1HicRWiOISbjtSfJ2fSbfqJHDvUNkxdHBPmBBfn7NzYa-iVwRn1_6LztcIxagAyVvy0m08kumyfmJHgCiBZt9UjLTdSNSLYl5gYBK5cMrz7yeBA6iVKITIH7QeKuZ9Ld2GUQUtYY2XZXWYDgyO8ClGsA44Lr56tw_sXW6-cNKGtHpwBI8obBSUorT3dXnfUWbVt-IQ4nMchsT8wHQFZfGNoSqB7AC8Od6impGwfCPu0yHOODC_HISXFJF-ccRbXWof5K9qETvIMhpCNlazb1Z42v-MN_WapyoJufgvQI4sXjTlHD9I8y0zEyuErGlGMrN42gkPziDnZvsKUCKrS39nlPtNqSFAR6BAjxxzFsDFyHISIbqxcckQQL6M6Z8MtegKlW6UiehUSJ1c2kA6OY4hmy7Bc_xJVijx3dHvMqr0ePg\",\n        \"name\": \"Jacob Strosin\"\n    },\n    \"message\": \"Success\"\n}"
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMDE0MWY1Nzk2NjJkMjYyZWVlZGM3ODJmYzdlNzBhYjk0ZDI5ZWExZmM2YjQ2ZjQ5MDBiYjMzZjI2NTg2ZGRlNjY3MDM3MDM2MWI0MjU0NTciLCJpYXQiOjE3MTQ4NTgwMDguNDQxMzU1LCJuYmYiOjE3MTQ4NTgwMDguNDQxMzU3LCJleHAiOjE3MTQ4Nzk2MDguNDMxMjc2LCJzdWIiOiI1Iiwic2NvcGVzIjpbXX0.WC7rLpCilEVpEkcbchgfJJGFKVzNXqZK4e-jhW3gSaVb6U2ffJ8ys6d5dUMIBvl7zBTImGuBvbRsiT28iH4Qo3aoKvaetLvK7zHa0SZiWtO5JL8Oow24Hs8ijVmUruH8qqqUQ0UF8N7wBHHXUW2Yq2RFy2iuLxq02DEMBlJbrjuBU3iWRzEb5paXDVgD8UXsB3A28gmlVRg9N4Lfq30djxf0uwhXf2qgr7I21_0pKoebpQL0cYq4IJOcoB76j5j0tFxlx4W17hQQDwNIygIekqZ1oJF0oh_TyvflTE23c6XMavJj7E9fuskLFzgICnQYxONz95Rs4hreFt5ctS0zeWtpFtQm1EEk9BURqflAjtzk09ioYWvMBXNNPx7AzXlyO7Br7xj8EzMJyvfysYhDhpc_KctBnFX76TpAKLAnX1Tq1DIOJjrCkfwWQpGbXflTZ57g1WnBkLplksQc__fomAbuUkMXnxVkfmrSEZfsyHnWxVmFX_97iOJ7kxIqlxL6suAyccxfPY2VLSF15GWT4DcnKouVqOxy4VguDlctBrXDW_FgPr2pcA8vP5vNC7gH2Gs4xL62s8mV1iShGirzv_WDePRdxAuPLVLXEmqwxgV_HRd57lmLxkmE3cuwG3EwNMizwk342TFwZqqrXQjuTCjgs_F7_0axByKh3x02QIo\",\n        \"token_expiry\": 1714879608,\n        \"name\": \"Jacob Strosin\"\n    },\n    \"message\": \"Success\"\n}"
 				}
 			]
 		},
@@ -182,13 +182,13 @@
 			},
 			"response": [
 				{
-					"name": "Successfull Registration Response",
+					"name": "Register",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"Jenifer_Koepp99@hotmail.com\",\r\n    \"name\":\"Oliver Dickinson\",\r\n    \"password\":\"Passsssssssss\",\r\n    \"password_confirmation\":\"Passsssssssss\"\r\n}",
+							"raw": "{\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"name\":\"{{$randomFullName}}\",\r\n    \"password\":\"Passsssssssss\",\r\n    \"password_confirmation\":\"Passsssssssss\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -233,7 +233,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Sat, 04 May 2024 17:04:31 GMT"
+							"value": "Sat, 04 May 2024 21:27:07 GMT"
 						},
 						{
 							"key": "Content-Type",
@@ -253,7 +253,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmQwY2MyZjMyZjE4MzM0MGM3YWExOWI5YWIzNDA1ZDYxYTdhNzFhNWQ1NWQxYjRlNjk1NWVmMDIyMDZmOWI3NGNiNjUyZDQ1MzE2MmNjMGMiLCJpYXQiOjE3MTQ4NDIyNzEuMDgzMjM5LCJuYmYiOjE3MTQ4NDIyNzEuMDgzMjU5LCJleHAiOjE3MTQ4NjM4NzEuMDU5MzEzLCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.D7eD_0CsvPtNDAMiPkLymio38AWO9q7iK4bMOI5Eoa-fcKnGUe15SOGwjvYlAOJRe-weXiFwk03kMyXidx6hRtN-1W4j8N88DM7ebVZ2o2N0lIlcPrbt1u_CVJaMp-he9DjEo6iMFeM7LOF5G3af1SMAb6ULzHcD6REC_W_xqQwlknMsYgjGTN9OZU8HqOwWZ2zTUPeWx8vrPDGJDrCjSYfzKR_EZxt1KvONdAMZw_8UPnMsCa5ptf15En75UMIwmRJhpI9EZs1bXncbMPE6Qg8iA4LJVAEHfd6L0J_Q_jlK6Slvvou0E1ta0a3BJNvwUQ2v1ac-d1FLJOKkICRL3dW3xvv06RlQeEQVzl2qnLibQtiNcRut6Sp8MK0GCIrio9bE4lL4nIuvKD5FKOQ9D7ZPx1WL680J9cpX9owdVYSyr5m7gMAYE42qK724_DjFKmxSWjBAflDJM_bJ6CSBnsZXteg2-m0-tD8XmyuTeqcLsNCdQhn9hZXGl2hNCDZGWQQ4qsHJzuZQjtBoQdJiiqBaTDdsGARR0vYhosFCrXYe3G5oO9cfXQz6OdnD7GFxqw3Lf5NOjPmPmdnACLz-k8u7-884RGw4p_D2JGtpHJx_6evs2iCjg58TMFTsCO8cA1lZAm6fzjDqZ2OrhBRvELGkJDLj8EwEaqfnQ0BQ2go\",\n        \"name\": \"Wm Hammes\"\n    },\n    \"message\": \"User Created\"\n}"
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiOGY5Y2U5NjIxOTk5YTJlZDMxMDVhYmZjYzM1Zjg1OTE0MTY4N2I3ZjJmNGIzNmZlMzc5YTJlN2VmODhkMmFlNjgxZTYyNjQ1MzQ2MDkzMDQiLCJpYXQiOjE3MTQ4NTgwMjcuNDQ4MTAyLCJuYmYiOjE3MTQ4NTgwMjcuNDQ4MTA0LCJleHAiOjE3MTQ4Nzk2MjcuNDM5MTQ4LCJzdWIiOiIxOCIsInNjb3BlcyI6W119.SDSPSLqH1wNWsYxwr3xatQn9EaqhInXSFORQh6_rEIwcsllN1Z1_dVvglwlo3qXvLB7NIYigRQLqnuKFcnqtbH4crzlVYWrudRHb4fV3NKEGsdEAzjtvdZ0TsWPMnOPk7c4V0rtd9ooI1COSEuAGjL4A0a9lbuabMdKH7O1QY4rf3ibfUxOIy7JJyviZk2MPSOZtm5eNeUWh9GIU6gCgkwHCJAihJyHjThPJp97gnc4-UeMWT48AxZ8TzV3Y1QeGPI3jUsHhobj9yedBzWim2xa0VkE9CoMFw0tV2SNsNpPQmv2S4YO4opXv40fPwpZBori9DWK6DEmaDcp-5QyDi1si3uT3kAd3KEhw9TaBmfdkXSLva7zrABuhJ-_E39jl5o0GvkuZqAK9MNfLgBPx_ZO-_ENcpGICC3OP1jrqwuG2krVMh_29IqHNqlGfvj-a7g2-VlQOr85yWciWw1mYkp2G746H1x1Kap-6Kz1Hv_EgtmPJzsMhm1_wPGgHXMJ958KLKMIww0Gm7HZpfC25lcU0HEbNO2tve0_QbQFqvS57DYp--9ZXaqWuVNza6O8rQHUnNziukyWA-4zC4zGrWoprZDEzzWMEFLB3DERN4SZR52psUHnDuWYknwxVZAippAWzyzntFawUGGVX7T_nFV1rM0C-cOYMJSUdoEKdroE\",\n        \"token_expiry\": 1714879627,\n        \"name\": \"Lynda Hagenes\"\n    },\n    \"message\": \"User Created\"\n}"
 				}
 			]
 		},

@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
         (response: any) => {
           if (response.success) {
             localStorage.setItem('user_token', response.data.token);
+            localStorage.setItem('token_expiry', response.data.token_expiry);
             this.router.navigate(['/inquiries']);
           }
         },

@@ -27,7 +27,12 @@ class RegisterController extends Controller
         $user_info['password'] = bcrypt($request->password);
 
         $user = User::create($user_info);
-        $response['token'] = $user->createToken('token')->accessToken;
+        $accessToken = $user->createToken('token')->accessToken;
+        $token = $user->tokens->first();
+
+        $response['token'] = $accessToken;
+        $response['token_expiry'] =
+            strtotime($token->expires_at);
         $response['name'] = $user->name;
 
         return $this->sendSuccessResponse($response, "User Created");
@@ -46,7 +51,11 @@ class RegisterController extends Controller
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $user = Auth::user();
-            $response['token'] = $user->createToken('token')->accessToken;
+            $accessToken = $user->createToken('token')->accessToken;
+            $token = $user->tokens->first();
+
+            $response['token'] = $accessToken;
+            $response['token_expiry'] = strtotime($token->expires_at);
             $response['name'] = $user->name;
             return $this->sendSuccessResponse($response, "Success");
         } else {
