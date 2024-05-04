@@ -1,0 +1,35 @@
+<div class="row justify-content-center m-10">
+  <table class="table align-middle ms-3 bg-white" style="width: 70vw">
+    <thead class="bg-light">
+      <tr class="table-dark">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Date Sent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let inquiry of inquiries">
+        <td>
+          <p class="fw-bold mb-1">{{ inquiry.name }}</p>
+        </td>
+        <td>
+          {{ inquiry.email }}
+        </td>
+        <td class="text-capitalize">
+          <span
+            [ngClass]="{
+              'btn btn-warning': inquiry.status == 'new',
+              'btn btn-info': inquiry.status == 'assneigned',
+              'btn btn-success': inquiry.status == 'resolved',
+              ' btn ': true,
+
+            }"
+            >{{ inquiry.status }}</span
+          >
+        </td>
+        <td>{{ inquiry.created_at | date : "EEE, MMM d, y" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
