@@ -21,3 +21,9 @@ use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentL
 
 Route::post('register', [RegisterController::class, 'register']);
 Route::post('login', [RegisterController::class, 'login']);
+
+Route::middleware('auth:api')->group(function () {
+    Route::get('inquries', [InquiryController::class, 'getAll']);
+    Route::post('inquries/add', [InquiryController::class, 'store']);
+    Route::get('inquries/{id}', [InquiryController::class, 'getByID']);
+});
